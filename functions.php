@@ -13,6 +13,11 @@
  *-- Appliquer les changements
  *FLUSH PRIVILEGES;
  * 
+ * CREATE TABLE notes (
+ *  id INT AUTO_INCREMENT PRIMARY KEY,
+ *  title VARCHAR(255) NOT NULL,
+ *   content TEXT NOT NULL
+ *);
  * 
  * 
  * __________________________pdo.php_____________________________________________________
@@ -45,16 +50,16 @@
 */
 require_once 'pdo.php';
 
-/**
- * Execute a SQL query with parameters.
- *
- * @param string $sql
- * @param array $params
- * @return array
- */
-function executeQuery($sql, $params = []) {
+// Fonction pour ajouter une note
+function addNote($title, $content) {
     $pdo = getPDOConnection();
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute($params);
-    return $stmt->fetchAll();
+    $stmt = $pdo->prepare("INSERT INTO notes (title, content) VALUES (:title, :content)");
+    $stmt->execute(['title' => $title, 'content' => $content]);
+}
+
+// Fonction pour supprimer une note
+function deleteNote($noteId) {
+    $pdo = getPDOConnection();
+    $stmt = $pdo->prepare("DELETE FROM notes WHERE id = :id");
+    $stmt->execute(['id' => $noteId]);
 }
