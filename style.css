@@ -1,0 +1,72 @@
+/* Styles de base */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Titres */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+/* Paragraphes et liens */
+p {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Boutons */
+button {
+    background-color: #bb86fc;
+    border: none;
+    border-radius: 5px;
+    color: #121212;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+/* Formulaires */
+input, textarea {
+    background-color: #333333;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    color: #e0e0e0;
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+input:focus, textarea:focus {
+    border-color: #bb86fc;
+    outline: none;
+}
